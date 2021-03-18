@@ -6,7 +6,7 @@ const skillsCtrl = require('../controllers/skills')
 router.get('/', skillsCtrl.skills);
 router.get('/new', skillsCtrl.new);
 router.post('/', skillsCtrl.create)
-
+router.delete('/:id', skillsCtrl.delete);
 
 
 
