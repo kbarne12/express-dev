@@ -1,13 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const Skills = require('../models/skills')
+const skillsCtrl = require('../controllers/skills')
 
 /* GET users listing. */
-router.get('/', function(req, res) {
-  res.render('ski/skills', {
-    skills: Skills.getAll()
-  });
-});
+router.get('/', skillsCtrl.skills);
 
 
 
