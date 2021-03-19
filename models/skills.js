@@ -1,8 +1,8 @@
 const skills = [
-    {skill: 'CSS', have: true},
-    {skill: 'JavaScript', have: true},
-    {skill: 'HTML5', have: true},
-    {skill: 'Node.js', have: false}
+    {id: 100, skill: 'CSS', have: true},
+    {id: 101,skill: 'JavaScript', have: true},
+    {id: 102,skill: 'HTML5', have: true},
+    {id: 103,skill: 'Node.js', have: false}
 
 ]
 
@@ -10,10 +10,16 @@ module.exports = {
     getAll,
     getOne,
     create,
-    delete: deleteOne
-};
+    deleteOne,
+    deleteSkill
+}
+
+function getOne(id) {
+    return skills.find(skill => skill.id === parseInt(id))
+}
+
 function deleteOne(id) {
-    const idx = skills.findIndex(skill => skill.id === parseInt(id));
+    let idx = skills.findIndex(skill => skill.id === parseInt(id));
     skills.splice(idx, 1);
 }
 
